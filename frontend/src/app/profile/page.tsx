@@ -13,7 +13,7 @@ export default function ProfilePage() {
   const [challenges, setChallenges] = useState<any[]>([]);
   const [orders, setOrders] = useState<any[]>([]);
   const [editing, setEditing] = useState(false);
-  const [form, setForm] = useState({ displayName: '', bio: '' });
+  const [form, setForm] = useState({ displayName: '' });
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function ProfilePage() {
       router.push('/login');
       return;
     }
-    setForm({ displayName: user.displayName || '', bio: user.bio || '' });
+    setForm({ displayName: user.displayName || '' });
     api.challenges.my(token).then((d: any) => setChallenges(d)).catch(() => {});
     api.orders.my(token).then((d: any) => setOrders(d)).catch(() => {});
   }, [user, token, router]);
@@ -56,7 +56,6 @@ export default function ProfilePage() {
                 {editing ? (
                   <div className="space-y-2">
                     <input type="text" className="input-field text-lg font-bold" value={form.displayName} onChange={(e) => setForm((p) => ({ ...p, displayName: e.target.value }))} />
-                    <input type="text" className="input-field text-sm" value={form.bio} onChange={(e) => setForm((p) => ({ ...p, bio: e.target.value }))} placeholder="Short bio..." />
                     <div className="flex gap-2">
                       <button onClick={handleSave} disabled={saving} className="btn-primary text-sm !py-1 !px-4">{saving ? 'Saving...' : 'Save'}</button>
                       <button onClick={() => setEditing(false)} className="btn-secondary text-sm !py-1 !px-4">Cancel</button>
@@ -66,7 +65,6 @@ export default function ProfilePage() {
                   <>
                     <h1 className="text-2xl font-display font-bold text-gray-900">{user.displayName || 'User'}</h1>
                     <p className="text-gray-500">{user.email}</p>
-                    {user.bio && <p className="text-sm text-gray-600 mt-1">{user.bio}</p>}
                   </>
                 )}
               </div>
