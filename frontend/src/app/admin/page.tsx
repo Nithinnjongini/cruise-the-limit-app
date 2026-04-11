@@ -46,11 +46,11 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     if (!token) return;
-    if (tab === 'users') api.users.getAll(token).then((d: any) => setUsers(Array.isArray(d) ? d : d.data ?? [])).catch(() => {});
-    if (tab === 'challenges') api.challenges.getAll(token).then((d: any) => setChallenges(Array.isArray(d) ? d : d.data ?? [])).catch(() => {});
-    if (tab === 'orders') api.orders.getAll(token).then((d: any) => setOrders(Array.isArray(d) ? d : d.data ?? [])).catch(() => {});
-    if (tab === 'testimonials') api.testimonials.getAll(token).then((d: any) => setTestimonials(Array.isArray(d) ? d : d.data ?? [])).catch(() => {});
-    if (tab === 'messages') api.contact.getAll(token).then((d: any) => setMessages(Array.isArray(d) ? d : d.data ?? [])).catch(() => {});
+    if (tab === 'users') api.users.getAll(token).then((d: any) => setUsers(Array.isArray(d) ? d : d.data ?? [])).catch(() => { });
+    if (tab === 'challenges') api.challenges.getAll(token).then((d: any) => setChallenges(Array.isArray(d) ? d : d.data ?? [])).catch(() => { });
+    if (tab === 'orders') api.orders.getAll(token).then((d: any) => setOrders(Array.isArray(d) ? d : d.data ?? [])).catch(() => { });
+    if (tab === 'testimonials') api.testimonials.getAll(token).then((d: any) => setTestimonials(Array.isArray(d) ? d : d.data ?? [])).catch(() => { });
+    if (tab === 'messages') api.contact.getAll(token).then((d: any) => setMessages(Array.isArray(d) ? d : d.data ?? [])).catch(() => { });
   }, [tab, token]);
 
   const approveTestimonial = async (id: string) => {
@@ -82,13 +82,13 @@ export default function AdminDashboard() {
   if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-500">Loading dashboard...</div>;
   if (!stats) return <div className="min-h-screen flex items-center justify-center text-gray-500">Access denied</div>;
 
-  const statCards = [
-    { icon: Users, label: 'Users', value: stats.totalUsers, color: 'bg-blue-100 text-blue-700' },
-    { icon: Award, label: 'Challenges', value: stats.totalChallenges, color: 'bg-green-100 text-green-700' },
-    { icon: Package, label: 'Orders', value: stats.totalOrders, color: 'bg-purple-100 text-purple-700' },
+  const statCards: { icon: any; label: string; value: any; color: string; tabKey?: AdminTab }[] = [
+    { icon: Users, label: 'Users', value: stats.totalUsers, color: 'bg-blue-100 text-blue-700', tabKey: 'users' },
+    { icon: Award, label: 'Challenges', value: stats.totalChallenges, color: 'bg-green-100 text-green-700', tabKey: 'challenges' },
+    { icon: Package, label: 'Orders', value: stats.totalOrders, color: 'bg-purple-100 text-purple-700', tabKey: 'orders' },
     { icon: DollarSign, label: 'Revenue', value: `$${(stats.totalRevenue / 100).toFixed(2)}`, color: 'bg-amber-100 text-amber-700' },
-    { icon: MessageSquare, label: 'Pending Reviews', value: stats.pendingTestimonials, color: 'bg-rose-100 text-rose-700' },
-    { icon: Mail, label: 'Unread Messages', value: stats.unreadMessages, color: 'bg-cyan-100 text-cyan-700' },
+    { icon: MessageSquare, label: 'Pending Reviews', value: stats.pendingTestimonials, color: 'bg-rose-100 text-rose-700', tabKey: 'testimonials' },
+    { icon: Mail, label: 'Unread Messages', value: stats.unreadMessages, color: 'bg-cyan-100 text-cyan-700', tabKey: 'messages' },
   ];
 
   const tabs: { key: AdminTab; label: string }[] = [
@@ -122,7 +122,11 @@ export default function AdminDashboard() {
         {tab === 'overview' && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {statCards.map((s) => (
-              <div key={s.label} className="card p-6 flex items-center gap-4">
+              <div
+                key={s.label}
+                onClick={() => s.tabKey && setTab(s.tabKey)}
+                className={`card p-6 flex items-center gap-4 ${s.tabKey ? 'cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300' : ''}`}
+              >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${s.color}`}>
                   <s.icon size={24} />
                 </div>
