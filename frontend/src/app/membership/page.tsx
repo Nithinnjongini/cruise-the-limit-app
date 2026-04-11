@@ -66,7 +66,7 @@ export default function MembershipPage() {
               <div className="card p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="aspect-video relative rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <Image src="/images/sticker-banner.png" alt="Cruise The Limit Banner Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
+                    <Image src="/images/cruse-the-limit-sticker.png" alt="Cruise The Limit Banner Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
                   </div>
                   <div className="aspect-square relative rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
                     <Image src="/images/sticker-square.png" alt="Cruise The Limit Square Logo Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
