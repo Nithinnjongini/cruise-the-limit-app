@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import { api } from '@/lib/api';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 import { Package, Truck, Star, Shield, Minus, Plus } from 'lucide-react';
 
 export default function MembershipPage() {
@@ -63,8 +64,13 @@ export default function MembershipPage() {
             {/* Product Info */}
             <div>
               <div className="card p-8">
-                <div className="aspect-video bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg flex items-center justify-center mb-6">
-                  <Package size={80} className="text-primary-600" />
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="aspect-video relative rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <Image src="/images/sticker-banner.png" alt="Cruise The Limit Banner Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
+                  </div>
+                  <div className="aspect-square relative rounded-lg border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <Image src="/images/sticker-square.png" alt="Cruise The Limit Square Logo Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
+                  </div>
                 </div>
                 <h2 className="text-2xl font-display font-bold text-gray-900">Official Sticker Kit</h2>
                 <p className="text-3xl font-bold text-primary-700 mt-2">${unitPrice}</p>
