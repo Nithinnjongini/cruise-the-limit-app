@@ -18,8 +18,14 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "esModuleInterop": true
   },
-  "include": ["src/**/*", "api/**/*"]
+  "include": [
+    "src/**/*",
+    "api/**/*"
+  ]
 }
