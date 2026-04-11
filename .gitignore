@@ -39,6 +39,9 @@ coverage/
 backend/prisma/*.db
 backend/prisma/*.db-journal
 
+# Lock files
+package-lock.json
+
 # Misc
 *.tsbuildinfo
 next-env.d.ts
