@@ -9,11 +9,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <span className="text-xl font-display font-bold text-white">
-              Cruise<span className="text-accent-400">The</span>Limit
+            <span className="text-xl font-logo uppercase tracking-wide text-white">
+              Cruise<span className="text-accent-400 text-base mx-0.5">the</span>Limit
             </span>
             <p className="mt-3 text-sm text-gray-400">
               Promoting eco-friendly driving habits and building a community of responsible drivers.
+            </p>
+            <p className="mt-1 text-sm text-gray-400">
+              Promoting predictable and uniform speeds on our roadways and building a community of thoughtful drivers.
             </p>
           </div>
 
@@ -21,7 +24,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link href="/challenge" className="text-sm hover:text-white transition-colors">Take the Challenge</Link></li>
-              <li><Link href="/membership" className="text-sm hover:text-white transition-colors">Sticker Kits</Link></li>
+              <li><Link href="/membership" className="text-sm hover:text-white transition-colors">Sticker Sets</Link></li>
               <li><Link href="/core-values" className="text-sm hover:text-white transition-colors">Core Values</Link></li>
               <li><Link href="/testimonials" className="text-sm hover:text-white transition-colors">Testimonials</Link></li>
             </ul>
@@ -54,8 +57,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-8 text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Cruise The Limit. All rights reserved.
+        {/* Disclaimer */}
+        <div className="border-t border-gray-800 mt-10 pt-8">
+          <p className="text-xs text-gray-500 leading-relaxed max-w-4xl mx-auto text-center mb-6">
+            <strong className="text-gray-400">Disclaimer:</strong> &ldquo;Cruise the Limit&rdquo; is an advocacy movement promoting road safety, sustainability, and personal savings. This campaign does not supersede local traffic laws or the fundamental duty of every driver to exercise due care. Drivers must always adjust their speed for weather, road conditions, visibility, and the presence of emergency vehicles, bicycles and pedestrians. Following the speed limit does not guarantee safety in all circumstances. Always drive according to the conditions. The speed limit is the maximum under perfect conditions &ndash; safety often requires going slower.
+          </p>
+          <p className="text-center text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} Cruise The Limit. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

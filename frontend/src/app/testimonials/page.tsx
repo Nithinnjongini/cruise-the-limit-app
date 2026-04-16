@@ -58,7 +58,7 @@ export default function TestimonialsPage() {
             Community <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-yellow-400">Testimonials</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-primary-100 max-w-2xl mx-auto font-light leading-relaxed">
-            Hear from our community of eco-friendly drivers making a difference every single day.
+            Hear what Cruisers say about their experiences and the difference that &ldquo;Cruising The Limit&rdquo; has made in their lives.
           </p>
         </FadeIn>
       </section>
@@ -115,7 +115,7 @@ export default function TestimonialsPage() {
           <FadeIn direction="up">
             <div className="bg-gradient-to-b from-slate-50 to-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50">
               <h2 className="text-3xl font-display font-extrabold text-gray-900 mb-2 text-center">Share Your Story</h2>
-              <p className="text-center text-slate-500 mb-8">We love hearing how eco-driving has impacted your commute.</p>
+              <p className="text-center text-slate-500 mb-8">We love hearing about how &ldquo;Cruising the Limit&rdquo; has impacted your life.</p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

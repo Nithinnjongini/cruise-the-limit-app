@@ -51,9 +51,9 @@ export default function MembershipPage() {
     <>
       <section className="bg-gradient-to-br from-accent-700 to-accent-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-display font-extrabold">Sticker Kits</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-extrabold">Sticker Sets</h1>
           <p className="mt-4 text-lg text-accent-100 max-w-2xl mx-auto">
-            Show the world you drive with purpose. Get your official Cruise The Limit sticker kit.
+            One set per vehicle. Show your commitment to everyone&rsquo;s safety, the environment and your personal savings.
           </p>
         </div>
       </section>
@@ -72,18 +72,20 @@ export default function MembershipPage() {
                     <Image src="/images/sticker-square.png" alt="Cruise The Limit Square Logo Sticker" fill className="object-contain p-2 hover:scale-105 transition-transform duration-300" />
                   </div>
                 </div>
-                <h2 className="text-2xl font-display font-bold text-gray-900">Official Sticker Kit</h2>
+                <h2 className="text-2xl font-display font-bold text-gray-900">Official Sticker Set</h2>
                 <p className="text-3xl font-bold text-primary-700 mt-2">${unitPrice}</p>
                 <p className="mt-4 text-gray-600">
-                  Each kit includes a set of premium vinyl stickers for your vehicle, laptop, and personal items.
-                  Show your commitment to eco-friendly driving everywhere you go.
+                  Each set includes premium vinyl stickers, 1 &ldquo;bumper sticker&rdquo; and 3 smaller reminder stickers.
+                </p>
+                <p className="mt-2 text-sm text-gray-500">
+                  Visible from behind so others can settle in and cruise &mdash; as well as a reminder for you on your dash.
                 </p>
                 <div className="mt-6 space-y-3">
                   {[
                     { icon: Star, text: 'Premium weatherproof vinyl' },
-                    { icon: Truck, text: 'Free shipping on orders of 3+' },
+                    { icon: Truck, text: 'Free shipping on 3 or more sets' },
                     { icon: Shield, text: 'UV resistant, lasts 5+ years' },
-                    { icon: Package, text: '5 stickers per kit' },
+                    { icon: Package, text: '4 stickers per set (1 large, 3 small)' },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-3 text-sm text-gray-700">
                       <item.icon size={16} className="text-primary-600 flex-shrink-0" />

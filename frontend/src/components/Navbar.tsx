@@ -8,7 +8,7 @@ import { Menu, X, User, LogOut, LayoutDashboard } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/challenge', label: 'Take the Challenge' },
-  { href: '/membership', label: 'Sticker Kits' },
+  { href: '/membership', label: 'Sticker Sets' },
   { href: '/core-values', label: 'Core Values' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/contact', label: 'Contact' },
@@ -23,8 +23,10 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-display font-bold text-primary-700">
-              Cruise<span className="text-accent-600">The</span>Limit
+            <span className="text-2xl font-logo uppercase tracking-wide">
+              <span className="text-primary-800">Cruise</span>
+              <span className="text-accent-500 text-lg mx-0.5">the</span>
+              <span className="text-primary-800">Limit</span>
             </span>
           </Link>
 

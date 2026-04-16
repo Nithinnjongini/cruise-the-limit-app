@@ -53,9 +53,9 @@ export default function ContactPage() {
               </div>
               <div className="space-y-6 pt-2">
                 {[
-                  { icon: Mail, label: 'Email Support', value: 'hello@cruisethelimit.com', color: 'text-blue-600', bg: 'bg-blue-100' },
-                  { icon: Phone, label: 'Phone Line', value: '(555) 123-4567', color: 'text-green-600', bg: 'bg-green-100' },
-                  { icon: MapPin, label: 'Headquarters', value: 'Austin, Texas - United States', color: 'text-purple-600', bg: 'bg-purple-100' },
+                  { icon: Mail, label: 'Email Support', value: 'info@cruisethelimit.com', color: 'text-blue-600', bg: 'bg-blue-100' },
+                  { icon: Phone, label: 'Phone Line', value: '763-227-3165', color: 'text-green-600', bg: 'bg-green-100' },
+                  { icon: MapPin, label: 'Headquarters', value: 'Minneapolis, Minnesota - United States', color: 'text-purple-600', bg: 'bg-purple-100' },
                 ].map((item, i) => (
                   <div key={item.label} className="flex gap-5 group items-center">
                     <div className={`flex-shrink-0 w-14 h-14 ${item.bg} ${item.color} rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm`}>
