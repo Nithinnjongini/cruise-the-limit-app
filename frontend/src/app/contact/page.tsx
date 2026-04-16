@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-start">
 
-            <FadeIn delay={0.2} direction="right" className="lg:col-span-1 space-y-8 sticky top-24">
+            <FadeIn delay={0.2} direction="right" className="lg:col-span-1 space-y-8 lg:sticky top-24">
               <div>
                 <h2 className="text-3xl font-display font-extrabold text-gray-900 mb-4 tracking-tight">Reach Out Direct</h2>
                 <p className="text-gray-600 leading-relaxed text-lg pb-6 border-b border-slate-200">
