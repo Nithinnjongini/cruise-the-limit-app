@@ -12,11 +12,8 @@ export default function Footer() {
             <span className="text-xl font-logo uppercase tracking-wide text-white">
               Cruise<span className="text-accent-400 text-base mx-0.5">the</span>Limit
             </span>
-            <p className="mt-3 text-sm text-gray-400">
-              Promoting eco-friendly driving habits and building a community of responsible drivers.
-            </p>
-            <p className="mt-1 text-sm text-gray-400">
-              Promoting predictable and uniform speeds on our roadways and building a community of thoughtful drivers.
+            <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+              Promoting road safety, sustainability, and predictable uniform speeds. Join the movement to Cruise The Limit.
             </p>
           </div>
 
