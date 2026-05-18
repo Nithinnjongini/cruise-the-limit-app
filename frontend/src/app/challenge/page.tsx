@@ -16,6 +16,8 @@ export default function ChallengePage() {
     fullName: '',
     email: '',
     zipCode: '',
+    state: '',
+    country: 'USA',
     vehicleType: '',
     agreedToTerms: false,
   });
@@ -54,7 +56,7 @@ export default function ChallengePage() {
             Take the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-400">&ldquo;Cruise The Limit&rdquo;</span> Challenge
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-primary-100 max-w-2xl mx-auto font-light leading-relaxed">
-            Commit to cruising the speed limit and join thousands of responsible drivers already making a real difference.
+            Choose to cruise the posted speed limit and join thousands of other responsible drivers already making a real difference.
           </p>
         </FadeIn>
       </section>
@@ -66,13 +68,13 @@ export default function ChallengePage() {
             {/* What You Commit To */}
             <FadeIn delay={0.2} direction="right">
               <div className="sticky top-24">
-                <h2 className="text-3xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">What You Commit To</h2>
+                <h2 className="text-3xl font-display font-extrabold text-gray-900 mb-8 tracking-tight">Choose to</h2>
                 <div className="space-y-6">
                   {[
-                    { icon: Car, title: 'Cruising', desc: 'Safely cruising at the posted speed limit.', color: 'text-blue-600', bg: 'bg-blue-100' },
-                    { icon: Shield, title: 'Safety Pledge', desc: 'I will follow all traffic laws, eliminate distractions and always prioritize safety for everyone on the road.', color: 'text-primary-700', bg: 'bg-primary-100' },
-                    { icon: Clock, title: '1 Month', desc: 'Notice the impact on the road, the environment, your pocket book, and your peace of mind.', color: 'text-accent-600', bg: 'bg-accent-100' },
-                    { icon: MessageSquare, title: 'Feedback', desc: 'Honestly share on our site what you think and how this went for you.', color: 'text-rose-600', bg: 'bg-rose-100' },
+                    { icon: Car, title: 'Cruise the speed limit…', desc: '(set your cruise control at the speed limit and help maintain a predictable flow.)', color: 'text-blue-600', bg: 'bg-blue-100' },
+                    { icon: Shield, title: 'Safely…', desc: '(following traffic laws, avoiding distractions, and prioritizing safety for everyone on the road)', color: 'text-primary-700', bg: 'bg-primary-100' },
+                    { icon: Clock, title: 'For 30 days…', desc: '(Notice the impact you make on the road, the environment, your wallet, and peace of mind.)', color: 'text-accent-600', bg: 'bg-accent-100' },
+                    { icon: MessageSquare, title: 'And share your experience.', desc: '(Let others know how the challenge impacted you. Really!)', color: 'text-rose-600', bg: 'bg-rose-100' },
                   ].map((item, i) => (
                     <FadeIn key={item.title} delay={0.3 + (i * 0.1)} direction="right" className="flex gap-5 group">
                       <div className={`flex-shrink-0 w-12 h-12 ${item.bg} ${item.color} rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
@@ -103,7 +105,7 @@ export default function ChallengePage() {
                       Drive safe — every mile counts.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <button onClick={() => { setSubmitted(false); setForm({ fullName: '', email: '', zipCode: '', vehicleType: '', agreedToTerms: false }); }} className="btn-primary w-full sm:w-auto">
+                      <button onClick={() => { setSubmitted(false); setForm({ fullName: '', email: '', zipCode: '', state: '', country: 'USA', vehicleType: '', agreedToTerms: false }); }} className="btn-primary w-full sm:w-auto">
                         Take Another
                       </button>
                       <button onClick={() => router.push('/register')} className="w-full sm:w-auto bg-slate-100 text-slate-800 font-semibold px-6 py-3 rounded-lg hover:bg-slate-200 transition-colors">
@@ -116,7 +118,7 @@ export default function ChallengePage() {
                     <h2 className="text-2xl sm:text-3xl font-display font-bold text-gray-900 mb-3">Accept the Challenge</h2>
                     {!user && (
                       <p className="text-sm text-gray-500 mb-8 pb-4 border-b border-slate-100">
-                        No account needed — or <a href="/login" className="text-primary-700 font-semibold hover:text-primary-800 hover:underline transition-colors">log in</a> to track your challenges.
+                        No account needed - or <a href="/login" className="text-primary-700 font-semibold hover:text-primary-800 hover:underline transition-colors">log in</a> if member
                       </p>
                     )}
                     {user && <p className="text-sm text-gray-500 mb-8 pb-4 border-b border-slate-100">Submitting securely as <strong className="text-gray-900">{user.email}</strong></p>}
@@ -131,9 +133,83 @@ export default function ChallengePage() {
                           <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
                           <input type="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="jane@example.com" />
                         </div>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div>
                           <label className="block text-sm font-semibold text-gray-700 mb-2">Zip Code</label>
                           <input type="text" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none" value={form.zipCode} onChange={(e) => update('zipCode', e.target.value)} placeholder="55401" />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">State</label>
+                          <select required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none bg-white" value={form.state} onChange={(e) => update('state', e.target.value)}>
+                            <option value="">Select state</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="Other">Other / Non-US</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-gray-700 mb-2">Country</label>
+                          <select required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none bg-white" value={form.country} onChange={(e) => update('country', e.target.value)}>
+                            <option value="USA">United States</option>
+                            <option value="CAN">Canada</option>
+                            <option value="MEX">Mexico</option>
+                            <option value="GBR">United Kingdom</option>
+                            <option value="AUS">Australia</option>
+                            <option value="DEU">Germany</option>
+                            <option value="FRA">France</option>
+                            <option value="IND">India</option>
+                            <option value="JPN">Japan</option>
+                            <option value="OTHER">Other</option>
+                          </select>
                         </div>
                       </div>
                       <div>

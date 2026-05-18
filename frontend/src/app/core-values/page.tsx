@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Shield, Leaf, DollarSign, Heart, AlertTriangle, BookOpen } from 'lucide-react';
 import { FadeIn } from '@/components/fade-in';
 
@@ -39,8 +40,8 @@ export default function CoreValuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg">
-                <Shield size={28} strokeWidth={1.8} />
+              <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-md">
+                <Image src="/images/pillars/safety.png" alt="Safety" fill className="object-contain" />
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-extrabold text-gray-900 uppercase tracking-wide">Safety</h2>
             </div>
@@ -124,8 +125,8 @@ export default function CoreValuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-lg">
-                <Leaf size={28} strokeWidth={1.8} />
+              <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-md">
+                <Image src="/images/pillars/sustainability.png" alt="Sustainability" fill className="object-contain" />
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-extrabold text-gray-900 uppercase tracking-wide">Sustainability</h2>
             </div>
@@ -202,8 +203,8 @@ export default function CoreValuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-lg">
-                <DollarSign size={28} strokeWidth={1.8} />
+              <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-md">
+                <Image src="/images/pillars/savings.png" alt="Savings" fill className="object-contain" />
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-extrabold text-gray-900 uppercase tracking-wide">Savings</h2>
             </div>
@@ -217,24 +218,48 @@ export default function CoreValuesPage() {
 
               {/* Fueling Table */}
               <h3 className="text-lg font-bold text-gray-900 mb-4">Fuel Cost Comparison</h3>
-              <p className="text-sm text-gray-600 mb-6">Based on 10,260 miles per year at $3.58/gal</p>
+              <p className="text-sm text-gray-600 mb-6">Based on average 10,260 miles per year at $4.00/gal.</p>
               <div className="overflow-x-auto rounded-2xl border border-slate-200 mb-8">
                 <table className="w-full text-left">
                   <thead>
-                    <tr className="bg-primary-700 text-white">
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">Style</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">Speed</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">MPG</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">Gal/Yr</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">$/Year</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">$/Month</th>
-                      <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider">$/Week</th>
+                    <tr className="bg-gradient-to-r from-primary-700 to-primary-800 text-white">
+                      <th className="px-5 py-4 text-xs font-bold rounded-tl-3xl">Driving Style</th>
+                      <th className="px-5 py-4 text-xs font-bold text-center">Speed</th>
+                      <th className="px-5 py-4 text-xs font-bold text-center">Efficiency</th>
+                      <th className="px-5 py-4 text-xs font-bold text-center">Gal./year</th>
+                      <th className="px-5 py-4 text-xs font-bold text-center">$/year</th>
+                      <th className="px-5 py-4 text-xs font-bold text-center">$/month</th>
+                      <th className="px-5 py-4 text-xs font-bold rounded-tr-3xl text-center">$/week</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    <tr className="bg-red-50/50"><td className="px-5 py-4 font-bold text-red-700">&ldquo;Racer&rdquo;</td><td className="px-5 py-4">80 mph</td><td className="px-5 py-4">18.5</td><td className="px-5 py-4">555</td><td className="px-5 py-4 font-bold text-red-600">$1,986.90</td><td className="px-5 py-4">$165.58</td><td className="px-5 py-4">$38.25</td></tr>
-                    <tr className="bg-amber-50/50"><td className="px-5 py-4 font-bold text-amber-700">&ldquo;Speeder&rdquo;</td><td className="px-5 py-4">70 mph</td><td className="px-5 py-4">22.3</td><td className="px-5 py-4">460</td><td className="px-5 py-4 font-bold text-amber-600">$1,646.80</td><td className="px-5 py-4">$137.23</td><td className="px-5 py-4">$31.67</td></tr>
-                    <tr className="bg-primary-50/50"><td className="px-5 py-4 font-bold text-primary-700">&ldquo;Cruiser&rdquo; ✓</td><td className="px-5 py-4">60 mph</td><td className="px-5 py-4">27.2</td><td className="px-5 py-4">377</td><td className="px-5 py-4 font-bold text-primary-700">$1,349.66</td><td className="px-5 py-4">$114.47</td><td className="px-5 py-4">$25.98</td></tr>
+                  <tbody className="divide-y divide-slate-100 text-lg">
+                    <tr className="bg-primary-50/50 hover:bg-primary-50 transition-colors">
+                      <td className="px-5 py-4 font-bold text-primary-700 text-center">Cruiser (Limit)</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">60</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">27.2 mpg</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">377</td>
+                      <td className="px-5 py-4 font-semibold text-primary-700 text-center">$1,508</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$125.67</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$29.56</td>
+                    </tr>
+                    <tr className="bg-amber-50/50 hover:bg-amber-50 transition-colors">
+                      <td className="px-5 py-4 font-bold text-amber-700 text-center">Speeder + 10</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">70</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">22.3 mpg</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">460</td>
+                      <td className="px-5 py-4 font-semibold text-amber-600 text-center">$1,840</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$153.33</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$36.08</td>
+                    </tr>
+                    <tr className="bg-red-50/50 hover:bg-red-50 transition-colors">
+                      <td className="px-5 py-4 font-bold text-red-700 text-center">Racer + 20</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">80</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">18.5 mpg</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">555</td>
+                      <td className="px-5 py-4 font-semibold text-red-600 text-center">$2,200</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$183.33</td>
+                      <td className="px-5 py-4 text-gray-700 text-center">$43.14</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -263,12 +288,12 @@ export default function CoreValuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-center gap-4 mb-2">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 text-white shadow-lg">
-                <Heart size={28} strokeWidth={1.8} />
+              <div className="relative w-16 h-16 md:w-20 md:h-20 drop-shadow-md">
+                <Image src="/images/pillars/serenity.png" alt="Serenity" fill className="object-contain" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-gray-900 uppercase tracking-wide">Sanity</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-gray-900 uppercase tracking-wide">Serenity</h2>
             </div>
-            <p className="text-lg text-gray-500 ml-[82px] mb-8">(Peace of Mind) 😊</p>
+            <p className="text-lg text-gray-500 ml-[82px] mb-8">(Peace of Mind) : )</p>
           </FadeIn>
 
           <FadeIn delay={0.1} direction="up">
@@ -303,6 +328,12 @@ export default function CoreValuesPage() {
                 <h4 className="font-bold text-gray-900 mb-3">Highway Hypnosis vs. Flow State</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   Most drivers have experienced &ldquo;highway hypnosis&rdquo; &mdash; zoning out after miles of monotonous driving. Interestingly, Cruisers often report entering a healthier state &mdash; a relaxed focus (a &ldquo;flow state&rdquo;) where they remain fully aware of the road but without the gripping tension that comes from racing through traffic. This state conserves mental energy, reduces driver fatigue, and makes the entire drive more enjoyable.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 md:col-span-2">
+                <h4 className="font-bold text-gray-900 mb-3">Lower &ldquo;Cognitive Load&rdquo;</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Pace car drivers have lower heart rates and reduced muscle tension. There&rsquo;s no need to scan for police or seek gaps in traffic to advance.
                 </p>
               </div>
             </div>
@@ -353,8 +384,8 @@ export default function CoreValuesPage() {
               {[
                 { quote: 'The 4-Minute Peace', text: 'Is saving 4 minutes worth the 40 minutes of stress it took to chase them down?' },
                 { quote: 'The Permission Effect', text: 'Your steady pace gives other drivers "permission" to slow down (to the speed limit!) and relax.' },
-                { quote: 'The Grandparent Check', text: 'Before you accelerate past them ask yourself: "What if that were my grandparent driving?" It will change your perspective.' },
-                { quote: 'The Invisible Passenger', text: 'Drive as if someone you deeply love is riding in the back seat of every car around you — because they are.' },
+                { quote: 'Precious cargo', text: 'Drive as if someone who is deeply loved is riding in the back seat of every car around you — because they are.' },
+                { quote: 'Lower "Cognitive Load"', text: "Pace car drivers have lower heart rates and reduced muscle tension. There's no need to scan for police or seek gaps in traffic to advance." },
               ].map((wisdom) => (
                 <div key={wisdom.quote} className="bg-gradient-to-br from-primary-50 to-accent-50/30 rounded-2xl p-6 border border-primary-100">
                   <p className="text-sm font-bold text-primary-700 uppercase tracking-wider mb-2">&ldquo;{wisdom.quote}&rdquo;</p>
@@ -379,7 +410,7 @@ export default function CoreValuesPage() {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight drop-shadow-md">Our Mission</h2>
           <p className="mt-8 text-lg md:text-xl text-white/80 leading-relaxed font-light max-w-3xl mx-auto">
-            &ldquo;Cruise The Limit&rdquo; exists to transform the way people think about driving. We believe that small, intentional changes in driving behavior can lead to massive positive impacts on the environment, road safety, and community wellbeing. By gamifying eco-friendly driving through challenges, social proof, and visual reminders like our sticker sets, we make it easy and rewarding to drive responsibly every single day.
+            &ldquo;Cruise The Limit&rdquo; is a national drivers&rsquo; movement that recognizes its members and applauds their decision to be a responsible &ldquo;pace car&rdquo; in and among the ever-accelerating raceway that our US roadways have become. We choose to drive at the un-hurried and predictable tempo of the posted speed limit because it instills in us a relaxed sense of peace, which allows us to be the most vigilant as we drive. In addition to our own mindfulness, the additional benefits of community safety, environmental sustainability and multi-layered economic savings make speeding for us a ridiculous option.
           </p>
         </FadeIn>
       </section>

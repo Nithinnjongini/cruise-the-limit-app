@@ -53,7 +53,9 @@ export default function MembershipPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-display font-extrabold">Sticker Sets</h1>
           <p className="mt-4 text-lg text-accent-100 max-w-2xl mx-auto">
-            One set per vehicle. Show your commitment to everyone&rsquo;s safety, the environment and your personal savings.
+            One set per vehicle<br />
+            Proudly display your commitment to everyone&rsquo;s safety,<br />
+            the environment, saving money, and your peace of mind!
           </p>
         </div>
       </section>
@@ -82,10 +84,11 @@ export default function MembershipPage() {
                 </p>
                 <div className="mt-6 space-y-3">
                   {[
-                    { icon: Star, text: 'Premium weatherproof vinyl' },
-                    { icon: Truck, text: 'Free shipping on 3 or more sets' },
-                    { icon: Shield, text: 'UV resistant, lasts 5+ years' },
-                    { icon: Package, text: '4 stickers per set (1 large, 3 small)' },
+                    { icon: Shield, text: 'Free - Sign up to take the Challenge' },
+                    { icon: Star, text: '$10 - Become a member (Challenge + Membership card & access to download sign for 1 vehicle)' },
+                    { icon: Package, text: '$15 - Sticker Set for 1 vehicle (Challenge + Membership + Sticker Set)' },
+                    { icon: Plus, text: '$5 for each additional vehicle' },
+                    { icon: Truck, text: 'Free shipping for 3 or more sets' },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-3 text-sm text-gray-700">
                       <item.icon size={16} className="text-primary-600 flex-shrink-0" />
